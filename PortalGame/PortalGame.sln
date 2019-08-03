@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29020.237
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortalGame", "PortalGame.csproj", "{685646BF-72BC-4179-884A-BA2DC8FD759D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortalGame", "PortalGame\PortalGame.csproj", "{DD64151B-4554-4A0D-BD9D-6089C4734541}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{685646BF-72BC-4179-884A-BA2DC8FD759D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{685646BF-72BC-4179-884A-BA2DC8FD759D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{685646BF-72BC-4179-884A-BA2DC8FD759D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{685646BF-72BC-4179-884A-BA2DC8FD759D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD64151B-4554-4A0D-BD9D-6089C4734541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD64151B-4554-4A0D-BD9D-6089C4734541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD64151B-4554-4A0D-BD9D-6089C4734541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD64151B-4554-4A0D-BD9D-6089C4734541}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {5D2039D7-B577-41C7-8F9D-6623200B8200}
+		SolutionGuid = {A6EBB7EE-340D-42DF-8CC8-CA067B0A27D6}
 	EndGlobalSection
 EndGlobal
