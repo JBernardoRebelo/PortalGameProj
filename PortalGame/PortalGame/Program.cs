@@ -6,7 +6,9 @@ namespace PortalGame
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // Start game through console
+
+            // Start game through vs
         }
     }
 }
