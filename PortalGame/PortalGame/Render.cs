@@ -40,5 +40,15 @@ namespace PortalGame
                 return rows;
             }
         }
+
+        /// <summary>
+        /// Outputs an error message
+        /// </summary>
+        public void ErrorMessage()
+        {
+            WriteLine("Your input was invalid...");
+            WriteLine("The program will now shut down...");
+            Thread.Sleep(3000);
+        }
     }
 }
