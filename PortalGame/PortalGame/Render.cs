@@ -12,32 +12,21 @@ namespace PortalGame
     {
         /// <summary>
         /// Case dimensions are bellow or equal to 0
-        /// Accepts a number of rows and collumns
+        /// Accepts a dimension and a parameter to pick
         /// </summary>
-        /// <param name="rows"> Rows given </param>
-        /// <param name="cols"> Collumns given</param>
+        /// <param name="dim"> Dim given </param>
+        /// <param name="param"> Parameter given </param>
         /// <returns></returns>
-        public int InsertDimensions(int rows, int cols)
+        public void InsertDimensions(int dim, string param)
         {
-            int row;
-            int col;
-
-            Write("Please insert number of");
-            if(rows <= 0)
+            Write("Please insert number of ");
+            if(dim <= 0 && param == "row")
             {
                 Write("Rows: ");
-                row = Convert.ToInt32(ReadLine());
-                return row;
             }
-            if(cols <= 0)
+            else if(dim <= 0 && param == "col")
             {
                 Write("Collumns: ");
-                col = Convert.ToInt32(ReadLine());
-                return col;
-            }
-            else
-            {
-                return rows;
             }
         }
 

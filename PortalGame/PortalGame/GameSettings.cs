@@ -8,7 +8,7 @@ namespace PortalGame
     public class GameSettings
     {
         // Instantiate Render
-        Render rndr = new Render();
+        private Render rndr = new Render();
 
         /// <summary>
         /// Set rows of game
@@ -21,17 +21,8 @@ namespace PortalGame
         public int Colls { get; set; }
 
         /// <summary>
-        /// GameSettings constructor, accepts map dimmensions
+        /// Empty constructor
         /// </summary>
-        /// <param name="rows"></param>
-        /// <param name="cols"></param>
-        public GameSettings(int rows, int cols)
-        {
-            // Assign map dimensions
-            Rows = rows;
-            Colls = cols;
-        }
-
         public GameSettings()
         {
 
@@ -43,13 +34,10 @@ namespace PortalGame
         /// <param name="args"> Accepts array of strings from prompt</param>
         public void DefDimmensions(string[]args)
         {
-            // Check if array lenght is valid
-            CheckInput(args);
-
             // Run through all console arguments...
             for (int i = 0; i < args.Length; i++)
             {
-                // ... if args[i] is "-r", assign next index argument value
+                // args[i] is "-r", assign next index argument value
                 if (args[i] == "-r")
                 {
                     if (!int.TryParse(args[i + 1], out int x))
@@ -60,7 +48,7 @@ namespace PortalGame
                     Rows = Convert.ToInt32(args[i + 1]);
                 }
 
-                // ... if args[i] is "-c", assign next index argument value
+                // args[i] is "-c", assign next index argument value
                 if (args[i] == "-c")
                 {
                     if (!int.TryParse(args[i + 1], out int x))
@@ -83,26 +71,11 @@ namespace PortalGame
         /// <param name="coll"> Accepts number of collumns </param>
         private void CheckInput(int rows, int coll)
         {
-            if (Rows == 0 || Rows == 1 || Colls == 0 || Colls == 1)
+            if (rows == 0 || rows == 1 || coll == 0 || coll == 1)
             {
                 rndr.ErrorMessage();
                 Environment.Exit(0);
             }
         }
-
-        /// <summary>
-        /// Check if prompt input was valid
-        /// </summary>
-        /// <param name="args"></param>
-        private void CheckInput(string[] args)
-        {
-            if (args.Length < 4)
-            {
-                rndr.ErrorMessage();
-                Environment.Exit(0);
-            }
-        }
-
-
     }
 }
