@@ -92,6 +92,23 @@ namespace PortalGame
         }
 
         /// <summary>
+        /// Check console arguments' length, returns bool
+        /// </summary>
+        /// <param name="args"> Accepts array of strings args</param>
+        public bool ArgLengthCheck(string[] args)
+        {
+            // Start through console
+            if (args.Length > 4)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
         /// Accepts given dimensions annd accepts 
         /// </summary>
         /// <param name="rows"> Accepts number of rows </param>

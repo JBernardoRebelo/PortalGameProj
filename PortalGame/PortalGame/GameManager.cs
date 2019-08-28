@@ -6,6 +6,9 @@ namespace PortalGame
     /// </summary>
     public class GameManager
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public GameManager ()
         {
 
