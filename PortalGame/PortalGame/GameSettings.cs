@@ -13,7 +13,7 @@ namespace PortalGame
         /// <summary>
         /// Set rows of game
         /// </summary>
-        public int Rows{ get; set; }
+        public int Rows { get; set; }
 
         /// <summary>
         /// Set collumns of game
@@ -32,7 +32,7 @@ namespace PortalGame
         /// Define dimensions of map, accepts args
         /// </summary>
         /// <param name="args"> Accepts array of strings from prompt</param>
-        public void DefDimmensions(string[]args)
+        public void DefDimmensions(string[] args)
         {
             // Run through all console arguments...
             for (int i = 0; i < args.Length; i++)
@@ -40,28 +40,55 @@ namespace PortalGame
                 // args[i] is "-r", assign next index argument value
                 if (args[i] == "-r")
                 {
-                    if (!int.TryParse(args[i + 1], out int x))
-                    {
-                        rndr.ErrorMessage();
-                    }
-
+                    //if (!int.TryParse(args[i + 1], out int x))
+                    //{
+                    //    rndr.ErrorMessage();
+                    //}
                     Rows = Convert.ToInt32(args[i + 1]);
+                }
+                else
+                {
+                    rndr.ErrorMessage();
                 }
 
                 // args[i] is "-c", assign next index argument value
                 if (args[i] == "-c")
                 {
-                    if (!int.TryParse(args[i + 1], out int x))
-                    {
-                        rndr.ErrorMessage();
-                    }
-
+                    //if (!int.TryParse(args[i + 1], out int x))
+                    //{
+                    //    rndr.ErrorMessage();
+                    //}
                     Colls = Convert.ToInt32(args[i + 1]);
+                }
+                else
+                {
+                    rndr.ErrorMessage();
                 }
             }
 
             // Check if array lenght is valid
             CheckInput(Rows, Colls);
+        }
+
+        /// <summary>
+        /// Checks if there's invalid input
+        /// If there is, ask user for new dimensions
+        /// </summary>
+        public void StartWithInvalidInput()
+        {
+            // Start game through vs
+            // User inserts number of rows
+            if (Rows <= 0)
+            {
+                rndr.InsertDimensions(Rows, "row");
+                Rows = Convert.ToInt32(Console.ReadLine());
+            }
+            // User inserts number of columns
+            if (Colls <= 0)
+            {
+                rndr.InsertDimensions(Colls, "col");
+                Colls = Convert.ToInt32(Console.ReadLine());
+            }
         }
 
         /// <summary>
