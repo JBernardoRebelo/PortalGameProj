@@ -4,22 +4,12 @@ namespace PortalGame
     /// <summary>
     /// Player, all properties
     /// </summary>
-    public class Player
+    public class Player : IMapComponent
     {
         /// <summary>
         /// Player HP
         /// </summary>
         public int HP { get; set; }
-
-        /// <summary>
-        /// Player's X position
-        /// </summary>
-        public int Xpos { get; set; }
-
-        /// <summary>
-        /// Player's Y position
-        /// </summary>
-        public int Ypos { get; set; }
 
         /// <summary>
         /// Orange portal possession
@@ -49,5 +39,11 @@ namespace PortalGame
             OrPortal = true;
             BluePortal = true;
         }
+
+        /// <summary>
+        /// Return apropriate char, represent component
+        /// </summary>
+        /// <returns></returns>
+        public override char PrintPart() => 'P';
     }
 }
