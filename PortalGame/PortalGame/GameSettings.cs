@@ -34,38 +34,21 @@ namespace PortalGame
         /// <param name="args"> Accepts array of strings from prompt</param>
         public void DefDimmensions(string[] args)
         {
-            // Run through all console arguments...
+            // Go through array, get the information needed to start program
             for (int i = 0; i < args.Length; i++)
             {
-                // args[i] is "-r", assign next index argument value
+                // Get rows
                 if (args[i] == "-r")
                 {
-                    //if (!int.TryParse(args[i + 1], out int x))
-                    //{
-                    //    rndr.ErrorMessage();
-                    //}
-                    Rows = Convert.ToInt32(args[i + 1]);
+                    // Convert string to int
+                    Rows = TryConversion(args[i + 1]);
                 }
-                else
-                {
-                    rndr.ErrorMessage();
-                }
-
-                // args[i] is "-c", assign next index argument value
+                // Get collumns
                 if (args[i] == "-c")
                 {
-                    //if (!int.TryParse(args[i + 1], out int x))
-                    //{
-                    //    rndr.ErrorMessage();
-                    //}
-                    Colls = Convert.ToInt32(args[i + 1]);
-                }
-                else
-                {
-                    rndr.ErrorMessage();
+                    Colls = TryConversion(args[i + 1]);
                 }
             }
-
             // Check if array lenght is valid
             CheckInput(Rows, Colls);
         }
@@ -81,13 +64,13 @@ namespace PortalGame
             if (Rows <= 0)
             {
                 rndr.InsertDimensions(Rows, "row");
-                Rows = Convert.ToInt32(Console.ReadLine());
+                Rows = TryConversion(Console.ReadLine());
             }
             // User inserts number of columns
             if (Colls <= 0)
             {
                 rndr.InsertDimensions(Colls, "col");
-                Colls = Convert.ToInt32(Console.ReadLine());
+                Colls = TryConversion(Console.ReadLine());
             }
         }
 
@@ -98,14 +81,8 @@ namespace PortalGame
         public bool ArgLengthCheck(string[] args)
         {
             // Start through console
-            if (args.Length > 4)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            if (args.Length > 4) return true;
+            else return false;
         }
 
         /// <summary>
@@ -115,11 +92,26 @@ namespace PortalGame
         /// <param name="coll"> Accepts number of collumns </param>
         private void CheckInput(int rows, int coll)
         {
-            if (rows == 0 || rows == 1 || coll == 0 || coll == 1)
+            if (rows <= 1 || coll <= 1)
             {
                 rndr.ErrorMessage();
-                Environment.Exit(0);
             }
+        }
+
+        /// <summary>
+        /// Method to use try catch
+        /// </summary>
+        /// <param name="s"> Accepts a string </param>
+        /// <returns> Returns converted string to int </returns>
+        private int TryConversion(string s)
+        {
+            int i;
+
+            // Convert s to int, assign i to default if program crashes
+            try { i = Convert.ToInt32(s); }
+            catch { i = default; }
+
+            return i;
         }
     }
 }

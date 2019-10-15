@@ -8,27 +8,22 @@ namespace PortalGame
         {
             // Instantiate classes
             GameSettings gs = new GameSettings();
-            Program prog = new Program();
             Render rndr = new Render();
             GameManager gm = new GameManager();
 
             Console.WriteLine("Hellooooo"); // Debug
 
-            // Check length of args
-            if(gs.ArgLengthCheck(args))
+            // Define dimensions of map
+            gs.DefDimmensions(args);
+
+            // While dimensions are invalid ask for new ones
+            while (gs.Rows <= 0 || gs.Colls <= 0 ||
+                gs.Rows <= 0 && gs.Colls <= 0)
             {
-                gs.DefDimmensions(args);
+                // Ask new dimensions and proceed with game
+                gs.StartWithInvalidInput();
             }
-            else
-            {
-                // While dimensions are invalid ask for new ones
-                while(gs.Rows <= 0 || gs.Colls <= 0 ||
-                    gs.Rows <= 0 && gs.Colls <= 0)
-                {
-                    // Ask new dimensions and proceed with game
-                    gs.StartWithInvalidInput();
-                }
-            }
+
 
             //############################################
 

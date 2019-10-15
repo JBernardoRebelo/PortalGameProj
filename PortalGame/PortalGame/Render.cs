@@ -36,7 +36,6 @@ namespace PortalGame
         public void ErrorMessage()
         {
             WriteLine("Your input was invalid...");
-            WriteLine("The program will now shut down...");
             Thread.Sleep(3000);
         }
     }
