@@ -1,5 +1,5 @@
-﻿
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using static System.Console;
 
@@ -28,6 +28,18 @@ namespace PortalGame
             {
                 Write("Collumns: ");
             }
+        }
+
+        // To output the borders of the level
+        public void OutputMap(int x, int y)
+        {
+
+        }
+
+        // To print all the level's components
+        public void PlaceComps(List<IMapComponent> mapComp)
+        {
+
         }
 
         /// <summary>

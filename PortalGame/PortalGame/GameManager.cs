@@ -1,4 +1,6 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+
 namespace PortalGame
 {
     /// <summary>
@@ -6,10 +8,14 @@ namespace PortalGame
     /// </summary>
     public class GameManager
     {
+        // Instantiate objects, class level
+        Render render = new Render();
+        Random rnd = new Random();
+
         /// <summary>
         /// Constructor
         /// </summary>
-        public GameManager ()
+        public GameManager()
         {
 
         }
@@ -21,8 +27,14 @@ namespace PortalGame
         /// <param name="col"> Accepts nº of collumns </param>
         public void StartGame(int row, int col)
         {
-            // Instantiate Mapcomponents
+            // Instantiate list of IMapcomponent
+            List<IMapComponent> mapComp = new List<IMapComponent>();
+
+            // Instantiate objects (walls, turrets and exit)
+
             // Instantiate Player
+            // Random spawn - must be oposite side of exit
+
             // Instantiate Render
         }
 
@@ -30,6 +42,12 @@ namespace PortalGame
         private void Loop(int row, int col, Player player)
         {
             // Print stuff
+        }
+
+        // Test
+        private int LvlPos(int x, int y)
+        {
+            return rnd.Next();
         }
     }
 }
