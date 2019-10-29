@@ -20,11 +20,11 @@ namespace PortalGame
         public void InsertDimensions(int dim, string param)
         {
             Write("Please insert number of ");
-            if(dim <= 0 && param == "row")
+            if (dim <= 0 && param == "row")
             {
                 Write("Rows: ");
             }
-            else if(dim <= 0 && param == "col")
+            else if (dim <= 0 && param == "col")
             {
                 Write("Collumns: ");
             }
