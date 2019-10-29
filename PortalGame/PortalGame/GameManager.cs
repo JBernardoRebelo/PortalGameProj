@@ -28,7 +28,7 @@ namespace PortalGame
         public void StartGame(int row, int col)
         {
             // Instantiate list of IMapcomponent
-            List<IMapComponent> mapComp = new List<IMapComponent>();
+            List<MapComponent> mapComp = new List<MapComponent>();
 
             // Instantiate objects (walls, turrets and exit)
 

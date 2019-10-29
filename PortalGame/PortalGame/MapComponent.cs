@@ -4,7 +4,7 @@ namespace PortalGame
     /// <summary>
     /// Map component, has position
     /// </summary>
-    public class IMapComponent
+    public class MapComponent
     {
         /// <summary>
         /// Player's X position

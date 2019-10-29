@@ -4,7 +4,7 @@ namespace PortalGame
     /// <summary>
     /// Player, all properties
     /// </summary>
-    public class Player : IMapComponent
+    public class Player : MapComponent
     {
         /// <summary>
         /// Player HP

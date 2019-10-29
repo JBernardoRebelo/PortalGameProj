@@ -37,7 +37,7 @@ namespace PortalGame
         }
 
         // To print all the level's components
-        public void PlaceComps(List<IMapComponent> mapComp)
+        public void PlaceComps(List<MapComponent> mapComp)
         {
 
         }
