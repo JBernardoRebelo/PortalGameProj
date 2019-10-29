@@ -28,30 +28,36 @@ namespace PortalGame
         /// <param name="col"> Accepts nº of collumns </param>
         public void StartGame(int row, int col)
         {
+            Player player;
             // Instantiate list of IMapcomponent
             List<MapComponent> mapComps = new List<MapComponent>();
 
             // Instantiate objects (walls, turrets and exit)
 
-            // Instantiate Player
+            // Instantiate Player in collum 0 and random row
+            player = new Player(RetRand(0, row), 0);
+
             // Random spawn - must be oposite side of exit
 
             // Call loop
-            GameManager.Loop(row, col, Player player, mapComps);
+            Loop(row, col, player, mapComps);
         }
 
         // Runs gameloop
-        private void Loop(int row, int col, Player player, List<MapComponent> mapComps)
+        private void Loop
+            (int row, int col, Player player, List<MapComponent> mapComps)
         {
-            foreach(MapComponent mc in mapComps)
+            foreach (MapComponent mc in mapComps)
             {
                 // Print grid
                 // Place components
             }
         }
 
-        // Test
-        private int LvlPos(int x, int y)
+        /// <param name="x"> Minimum number </param>
+        /// <param name="y"> Maximum number </param>
+        /// <returns> Number beetween the given params </returns>
+        private int RetRand(int x, int y)
         {
             return rnd.Next();
         }
