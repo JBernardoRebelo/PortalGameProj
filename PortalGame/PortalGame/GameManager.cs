@@ -10,6 +10,7 @@ namespace PortalGame
     {
         // Instantiate objects, class level
         Render render = new Render();
+        RenderMap rMap = new RenderMap();
         Random rnd = new Random();
 
         /// <summary>
@@ -28,20 +29,25 @@ namespace PortalGame
         public void StartGame(int row, int col)
         {
             // Instantiate list of IMapcomponent
-            List<MapComponent> mapComp = new List<MapComponent>();
+            List<MapComponent> mapComps = new List<MapComponent>();
 
             // Instantiate objects (walls, turrets and exit)
 
             // Instantiate Player
             // Random spawn - must be oposite side of exit
 
-            // Instantiate Render
+            // Call loop
+            GameManager.Loop(row, col, Player player, mapComps);
         }
 
         // Runs gameloop
-        private void Loop(int row, int col, Player player)
+        private void Loop(int row, int col, Player player, List<MapComponent> mapComps)
         {
-            // Print stuff
+            foreach(MapComponent mc in mapComps)
+            {
+                // Print grid
+                // Place components
+            }
         }
 
         // Test

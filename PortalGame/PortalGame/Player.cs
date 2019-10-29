@@ -1,15 +1,21 @@
-﻿
+﻿using System.Numerics;
+
 namespace PortalGame
 {
     /// <summary>
     /// Player, all properties
     /// </summary>
-    public class Player : MapComponent
+    public class Player : Entity
     {
         /// <summary>
         /// Player HP
         /// </summary>
-        public int HP { get; set; }
+        public override int HP { get; set; }
+
+        /// <summary>
+        /// Defines player's position
+        /// </summary>
+        public override Vector2 Position { get; set; }
 
         /// <summary>
         /// Orange portal possession
@@ -32,8 +38,7 @@ namespace PortalGame
             HP = maxHP;
 
             // Initialize position
-            Xpos = x;
-            Ypos = y;
+            Position = new Vector2(x, y);
 
             // Initialize portals' possession as true
             OrPortal = true;
