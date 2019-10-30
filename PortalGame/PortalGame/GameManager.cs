@@ -33,7 +33,11 @@ namespace PortalGame
 
             // Instantiate list of Mapcomponent
             List<MapComponent> mapComps = new List<MapComponent>();
+
+            // debug
             Wall wall = new Wall(RetRand(0, row), col);
+            mapComps.Add(wall);
+            // ----
 
             // Instantiate objects (walls, turrets and exit)
             mapComps.Add(wall);
@@ -64,7 +68,8 @@ namespace PortalGame
                     rMap.FillMap(mc);
                 }
 
-                rMap.PlaceComps(mapComps);
+                //rMap.PlaceComps(mapComps);
+                rMap.PlaceEntities(player);
 
                 player.HP--;
             }

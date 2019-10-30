@@ -30,18 +30,6 @@ namespace PortalGame
             }
         }
 
-        // To output the borders of the level
-        public void OutputMap(int x, int y)
-        {
-
-        }
-
-        // To print all the level's components
-        public void PlaceComps(List<MapComponent> mapComp)
-        {
-
-        }
-
         /// <summary>
         /// Outputs an error message
         /// </summary>
