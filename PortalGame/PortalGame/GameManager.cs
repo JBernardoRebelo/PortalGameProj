@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 
 namespace PortalGame
 {
@@ -29,10 +30,13 @@ namespace PortalGame
         public void StartGame(int row, int col)
         {
             Player player;
-            // Instantiate list of IMapcomponent
+
+            // Instantiate list of Mapcomponent
             List<MapComponent> mapComps = new List<MapComponent>();
+            Wall wall = new Wall(RetRand(0, row), col);
 
             // Instantiate objects (walls, turrets and exit)
+            mapComps.Add(wall);
 
             // Instantiate Player in collum 0 and random row
             player = new Player(RetRand(0, row), 0);
@@ -48,20 +52,22 @@ namespace PortalGame
             (int row, int col, Player player, List<MapComponent> mapComps)
         {
             // While player is alive runs
-            while(player.HP > 90)
+            while (player.HP > 90)
             {
+                Console.Clear();
                 // Print board
                 rMap.PrintBoard(col, row);
 
-                // Place Components
+                // Place Components - fills map
                 foreach (MapComponent mc in mapComps)
                 {
-                    // Print grid
-                    // Place components 
+                    rMap.FillMap(mc);
                 }
-                // Debug
+
+                rMap.PlaceComps(mapComps);
+
                 player.HP--;
-            } 
+            }
         }
 
         /// <param name="x"> Minimum number </param>
@@ -69,7 +75,7 @@ namespace PortalGame
         /// <returns> Number beetween the given params </returns>
         private int RetRand(int x, int y)
         {
-            return rnd.Next();
+            return rnd.Next(x, y);
         }
     }
 }

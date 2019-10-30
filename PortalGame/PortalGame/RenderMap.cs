@@ -20,13 +20,13 @@ namespace PortalGame
         /// Overload Accepts and draws component in map
         /// *REUSED CODE*
         /// </summary>
-        /// <param name="mapComp"> Specific map component to be printed
+        /// <param name="mc"> Specific map component to be printed
         /// on board. </param>
-        public void FillMap(MapComponent mapComp)
+        public void FillMap(MapComponent mc)
         {
-            int[] normalizedPos = NormalizePosition(mapComp.Xpos, mapComp.Ypos);
+            int[] normalizedPos = NormalizePosition(mc.Xpos, mc.Ypos);
             Console.SetCursorPosition(normalizedPos[0], normalizedPos[1]);
-            Console.WriteLine(mapComp.PrintPart());
+            Console.WriteLine(mc.PrintPart());
         }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace PortalGame
             // For cicle to print map
             for (int k = 0; k < col * 4 + 1; k++)
             {
-                Console.Write("-");
+                Console.Write("~");
             }
 
             // New line
