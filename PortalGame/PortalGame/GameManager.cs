@@ -47,11 +47,21 @@ namespace PortalGame
         private void Loop
             (int row, int col, Player player, List<MapComponent> mapComps)
         {
-            foreach (MapComponent mc in mapComps)
+            // While player is alive runs
+            while(player.HP > 90)
             {
-                // Print grid
-                // Place components
-            }
+                // Print board
+                rMap.PrintBoard(col, row);
+
+                // Place Components
+                foreach (MapComponent mc in mapComps)
+                {
+                    // Print grid
+                    // Place components 
+                }
+                // Debug
+                player.HP--;
+            } 
         }
 
         /// <param name="x"> Minimum number </param>

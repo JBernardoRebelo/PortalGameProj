@@ -28,5 +28,40 @@ namespace PortalGame
             Console.SetCursorPosition(normalizedPos[0], normalizedPos[1]);
             Console.WriteLine(mapComp.PrintPart());
         }
+
+        /// <summary>
+        /// Prints board, accepts args converted from console
+        /// *REUSED*
+        /// </summary>
+        /// <param name="col"> GameSettings Collums value. </param>
+        /// <param name="rows"> GameSettings Row value. </param>
+        public void PrintBoard(int rows, int col)
+        {
+            //Console.Clear();
+            // For cicle to print map
+            for (int k = 0; k < col * 4 + 1; k++)
+            {
+                Console.Write("-");
+            }
+
+            // New line
+            Console.WriteLine();
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < col; j++)
+                {
+                    Console.Write("|   ");
+                }
+
+                Console.WriteLine('|');
+
+                for (int k = 0; k < col * 4 + 1; k++)
+                {
+                    Console.Write("-");
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }
